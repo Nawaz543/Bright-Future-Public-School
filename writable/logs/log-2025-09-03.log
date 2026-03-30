@@ -1,0 +1,191 @@
+CRITICAL - 2025-09-03 15:02:23 --> Error: Undefined constant "App\Controllers\hello_view"
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 8.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 15:11:36 --> ErrorException: Undefined variable $title
+[Method: GET, Route: hello]
+in APPPATH/Views/hello_view.php on line 9.
+ 1 APPPATH/Views/hello_view.php(9): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/hello_view.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Hello.php(8): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:44:40 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:49:37 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:51:38 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:52:28 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:54:15 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:56:48 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 16:58:54 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:04:14 --> Error: Class "app\Models\NoteModel" not found
+[Method: GET, Route: hello]
+in APPPATH/Controllers/Hello.php on line 9.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:09:13 --> ErrorException: Undefined array key "content "
+[Method: GET, Route: hello]
+in APPPATH/Views/hello_view.php on line 11.
+ 1 APPPATH/Views/hello_view.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/hello_view.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Hello.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:11:55 --> ErrorException: Undefined array key "content "
+[Method: GET, Route: hello]
+in APPPATH/Views/hello_view.php on line 11.
+ 1 APPPATH/Views/hello_view.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/hello_view.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Hello.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:13:28 --> ErrorException: Undefined array key "content "
+[Method: GET, Route: hello]
+in APPPATH/Views/hello_view.php on line 11.
+ 1 APPPATH/Views/hello_view.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/hello_view.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Hello.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:14:27 --> ErrorException: Undefined array key "content "
+[Method: GET, Route: hello]
+in APPPATH/Views/hello_view.php on line 11.
+ 1 APPPATH/Views/hello_view.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/hello_view.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Hello.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:17:43 --> ErrorException: Undefined array key "content "
+[Method: GET, Route: hello]
+in APPPATH/Views/hello_view.php on line 11.
+ 1 APPPATH/Views/hello_view.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/hello_view.php')
+ 3 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/Hello.php(16): view()
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->index()
+ 7 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')
+CRITICAL - 2025-09-03 17:33:35 --> ErrorException: Undefined variable $content
+[Method: POST, Route: hello/save]
+in APPPATH/Controllers/Hello.php on line 23.
+ 1 APPPATH/Controllers/Hello.php(23): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Hello->save()
+ 3 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')

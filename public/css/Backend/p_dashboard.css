@@ -1,0 +1,226 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #1e1e2f;
+  --text-light: #000;
+  --text-dark: #fff;
+  --sidebar: #007bff;
+  --card-light: #fff;
+  --card-dark: #2c2c3e;
+}
+
+[data-theme="light"] {
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+  --card: var(--card-light);
+}
+
+[data-theme="dark"] {
+  --bg: var(--bg-dark);
+  --text: var(--text-dark);
+  --card: var(--card-dark);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+body h2{
+  color: var(--text);
+}
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background: var(--sidebar);
+  color: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.3s;
+  font-size: 14px;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(255,255,255,0.2);
+}
+
+#log-btn {
+  margin-top: 20px;
+  /* padding: 8px 19px; */
+   padding: 6px 69px;
+  border: none;
+  background: #e42c2c;
+  color: #000;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  width: 100%;
+}
+
+#toggle-theme {
+  margin-top: 20px;
+  padding: 8px 12px;
+  border: none;
+  background: #ffcc00;
+  color: #000;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+form input, form button {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+form button {
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    display: flex;
+    /* overflow-x: auto; */
+    flex-wrap: wrap;
+  }
+  .sidebar nav a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
+
+@media(max-width: 300px) {
+  .sidebar nav a {
+    font-size: 12px;
+    padding: 6px;
+  }
+  body {
+    font-size: 14px;
+  }
+}
+
+#materials a {
+  color: var(--sidebar);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  padding: 2rem;
+
+}
+#materials a:hover {
+  text-decoration: underline;
+   color: #FF3E38;
+}
+
+/* Universal scroll for all tables */
+.table-container {
+  width: 100%;
+  overflow-x: auto;            /* horizontal scroll when needed */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+  margin: 1rem 0;
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 0.5rem; /* little padding so scroll feels better */
+}
+
+/* Tables inside scroll */
+.table-container table {
+  width: 100%;
+  min-width: 600px;   /* ensures scroll when screen < 600px */
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--muted);
+  text-align: left;
+  white-space: nowrap;  /* prevents text wrapping into ugly multi-lines */
+}
+
+th, td{
+  font-size: 0.85rem;
+  /* line-height: 1; */
+}
+
+th button,
+td button{
+   font-size: 0.7rem;
+   padding: 0.2rem;
+}
+
+
+
+/* exam schedule button */
+a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* bootstrap primary blue */
+  color: #fff !important;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+a.btn:hover {
+  background-color: #0056b3;
+}
+

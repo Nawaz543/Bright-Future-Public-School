@@ -1,0 +1,16 @@
+CRITICAL - 2025-09-14 14:03:27 --> ErrorException: include(header.html): Failed to open stream: No such file or directory
+[Method: GET, Route: student]
+in APPPATH/Views/student.php on line 11.
+ 1 APPPATH/Views/student.php(11): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 APPPATH/Views/student.php(11): include()
+ 3 SYSTEMPATH/View/View.php(226): include('/home/shah-nawaz/BFPS PROJECT/Bfps/app/Views/student.php')
+ 4 SYSTEMPATH/View/View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH/Common.php(1167): CodeIgniter\View\View->render()
+ 6 APPPATH/Controllers/Student.php(9): view()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Student->index()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+13 SYSTEMPATH/rewrite.php(44): require_once('/home/shah-nawaz/BFPS PROJECT/Bfps/public/index.php')

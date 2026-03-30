@@ -1,0 +1,250 @@
+:root {
+  --accent: #0077ff;
+  --bg: #ffffff;
+  --text: #222;
+  --card-bg: #f8f9fa;
+  --card-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #eaeaea;
+  --card-bg: #1f1f1f;
+  --card-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+h1, h2 {
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* ---------- HEADER / NAVBAR ---------- */
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brand svg { opacity: .95; }
+.brand-text { font-weight: 600; }
+
+.site-header {
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+[data-theme='dark'] .site-header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.15));
+}
+
+.actions {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+
+.btn {
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: var(--card-shadow);
+  font-weight: 600;
+}
+.btn.ghost {
+  border: 1px solid rgba(0,0,0,0.06);
+  background: transparent;
+}
+.btn-icon {
+  background: transparent;
+  border: 0;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* nav links underline hover */
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 800;
+}
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+.nav-links a:hover {
+  color: var(--accent);
+}
+.nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* ---------- CONTACT PAGE ---------- */
+.contact-page h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-info,
+.map,
+.contact-form,
+.notes {
+  background: var(--card-bg);
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  animation: fadeIn 0.8s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* hover effect for cards */
+.contact-info:hover,
+.map:hover,
+.contact-form:hover,
+.notes:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.contact-form {
+  margin: 2rem 0;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 0.3rem;
+  background: inherit;
+  color: inherit;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form-msg {
+  margin-top: 1rem;
+  color: green;
+  font-weight: 600;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  font-size: 2rem;
+}
+
+.social-icons a {
+  color: var(--text);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* Brand colors on hover */
+.social-icons a[aria-label="Facebook"]:hover { color: #1877f2; }
+.social-icons a[aria-label="Instagram"]:hover { color: #e4405f; }
+.social-icons a[aria-label="YouTube"]:hover { color: #ff0000; }
+.social-icons a[aria-label="WhatsApp"]:hover { color: #25d366; }
+
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #ccc;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  background: var(--card-bg);
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@media(max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

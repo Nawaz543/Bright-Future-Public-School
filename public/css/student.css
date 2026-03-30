@@ -1,0 +1,258 @@
+
+/* Full width layout */
+body {
+  background: var(--bg);
+  color: var(--muted);
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.container {
+  width: 100%;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Intro */
+.intro {
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 900px;
+}
+.intro h1 {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  color: var(--accent);
+}
+.intro p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+/* Section heading */
+.section-title {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  padding-bottom: .3rem;
+}
+
+/* Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: var(--surface);
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+.card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--accent);
+}
+
+/* Quick Links */
+.quicklinks a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+  padding: 2rem;
+
+}
+.quicklinks a:hover {
+  text-decoration: underline;
+   color: #FF3E38;
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--radius);
+}
+table {
+  min-width: 700px;  /* Adjust based on content */
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  padding: .8rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  text-align: left;
+  font-size: .95rem;
+}
+th {
+  background: var(--accent);
+  color: white;
+}
+tr:hover {
+  background: rgba(0,0,0,0.04);
+}
+[data-theme="dark"] tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Buttons */
+.btn-action {
+  padding: .5rem 1rem;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn-action:hover {
+  opacity: 0.9;
+}
+
+/* Forms */
+form {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  margin: 1rem 0;
+}
+form label {
+  display: block;
+  margin: .6rem 0 .2rem;
+  font-weight: 600;
+}
+form input, form select, form textarea {
+  width: 100%;
+  padding: .6rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+  background: var(--bg);
+  color: var(--muted);
+}
+form input:focus, form select:focus, form textarea:focus {
+  outline: 2px solid var(--accent);
+}
+
+/* Toppers */
+.topper-row { display:flex; justify-content: space-evenly; flex-wrap:wrap; }
+.topper-grid {
+  display: grid;
+  /* justify-content: space-evenly; flex-wrap:wrap; */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.topper-card {
+  background: var(--surface);
+  padding: 1rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--card-shadow);
+  transition: 0.3s;
+}
+.topper-card:hover {
+  transform: scale(1.03);
+}
+.topper-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: .8rem;
+  object-fit: cover;
+  border: 3px solid var(--accent);
+}
+.topper-card h3 {
+  margin: .4rem 0;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.topper-card p {
+  margin: 0;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media(max-width: 600px){
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+  .topper-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+@media(max-width: 300px){
+  .card {
+    padding: .8rem;
+  }
+  .card h2 {
+    font-size: 1rem;
+  }
+}
+
+/* Universal scroll for all tables */
+.table-container {
+  width: 100%;
+  overflow-x: auto;            /* horizontal scroll when needed */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on mobile */
+  margin: 1rem 0;
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 0.5rem; /* little padding so scroll feels better */
+}
+
+/* Tables inside scroll */
+.table-container table {
+  width: 100%;
+  min-width: 600px;   /* ensures scroll when screen < 600px */
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--muted);
+  text-align: left;
+  white-space: nowrap;  /* prevents text wrapping into ugly multi-lines */
+}
+
+.table-container th {
+  background: var(--accent);
+  color: #fff;
+}
+
+
+/* exam schedule button */
+.exam_schedule a.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* bootstrap primary blue */
+  color: #fff !important;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.exam_schedule a.btn:hover {
+  background-color: #0056b3;
+}

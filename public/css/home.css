@@ -1,0 +1,491 @@
+/* welcome_home.css
+   Complete, responsive CSS (supports dark mode, glass effect, waves, carousel, dropdown)
+*/
+
+/* -------------------------
+   Variables & reset
+   ------------------------- */
+:root{
+  --bg: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --primary: rgb(22, 116, 211);
+  --nav: #0066cc;
+  --nav-dark: #044a91;
+  --card-bg: #f5f5f5;
+  --accent: #ffdd57;
+  --glass-light: rgba(255,255,255,0.18);
+  --glass-dark: rgba(10,10,12,0.35);
+  --shadow: 0 8px 20px rgba(12,30,50,0.08);
+  --transition: 0.25s ease;
+  --max-content-width: 1200px;
+  --safe-pad: 14px;
+  --overlay: rgba(0,0,0,0.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition: background var(--transition), color var(--transition);
+  line-height:1.45;
+}
+
+/* ---------- Dark mode variables ---------- */
+body.dark{
+  --bg: #0f1220;
+  --text: #e6eefc;
+  --muted: #c2c8d8;
+  --card-bg: #0e1630;
+  --glass: var(--glass-dark);
+  --nav: #102033;
+  --nav-dark: #081226;
+  --accent: #ffcc57;
+  --overlay: rgba(0, 0, 0, 0.397);
+}
+
+/* ---------- Container helpers ---------- */
+.container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 0 var(--safe-pad);
+}
+
+/* -------------------------
+   Top Navbar
+   ------------------------- */
+.top-nav{
+  background: linear-gradient(90deg,var(--nav),var(--nav-dark));
+  color: #fff;
+  padding: 8px var(--safe-pad);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+.top-nav .left,
+.top-nav .right{
+  display:flex; gap:12px; align-items:center;
+  font-size:13px;
+}
+.top-nav .left span{display:inline-flex; gap:8px; align-items:center}
+.top-nav .center{
+  display:flex; gap:8px; align-items:center;
+  justify-content:center;
+}
+.top-nav a, .top-nav span, .top-nav i{ color: #fff; }
+#login{
+  background: rgba(255,255,255,0.06); border:0; padding:6px 8px; border-radius:20px; cursor:pointer;
+  color:white; display:inline-flex; align-items:center; justify-content:center;
+  transition: transform var(--transition), background var(--transition);
+}
+#login:hover{ transform: translateY(-3px) }
+
+/* theme toggle */
+#theme-toggle{ background:transparent; border:0; cursor:pointer; width:36px; height:36px; display:inline-flex; align-items:center; justify-content:center; }
+#theme-toggle i{ font-size:16px; color:#fff; transition: transform .18s }
+#theme-toggle:hover i{ transform:scale(1.4) }
+
+/* -------------------------
+   Mid-Nav (logo + title)
+   ------------------------- */
+.mid-nav {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  padding:18px var(--safe-pad);
+}
+.logo-box img.logo{ height:100px; width:auto; object-fit:cover; box-shadow:var(--shadow); border-radius: 50%; }
+/* === Add padding around logo === */
+.logo-box {
+     position: absolute;
+  left: 10vw ; /* left & right padding */
+}
+
+/* center title */
+.school-title-center{ text-align:center; max-width:820px }
+.school-title-center h2{ font-size:1.6rem; margin-bottom:6px; color:var(--primary) }
+.school-title-center p{ font-size:0.95rem; color:var(--muted); margin:2px 0 }
+
+/* -------------------------
+   Main Navigation
+   ------------------------- */
+.main-nav{
+  background: var(--nav);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:6px;
+  padding:6px var(--safe-pad);
+  position:sticky;
+  top:0;
+  z-index:1200;
+}
+.main-nav a,
+.main-nav .dropdown > a {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-size:0.95rem;
+  transition: background var(--transition), transform var(--transition);
+  line-height:1;
+}
+.main-nav a:hover,
+.main-nav .dropdown > a:hover{ background: rgba(255,255,255,0.06); transform:translateY(-2px) }
+
+/* ensure the dropdown anchor aligns with other anchors */
+.main-nav .dropdown{ position:relative; display:inline-flex; align-items:center; height:100% }
+.dropdown > a{ cursor:pointer }
+
+/* desktop dropdown content */
+.dropdown-content{
+  display:none;
+  position:absolute;
+  top:calc(100% + 8px);
+  left:0;
+  min-width:200px;
+  background:var(--card-bg);
+  border-radius:8px;
+  box-shadow: 0 10px 30px rgba(2,10,30,0.18);
+  overflow:hidden;
+  z-index:1400;
+}
+.dropdown-content a{
+  display:block;
+  padding:10px 12px;
+  color:var(--text);
+  text-decoration:none;
+  font-size:0.95rem;
+}
+.dropdown-content a:hover{ background:rgba(0,0,0,0.04) }
+
+/* show on hover (desktop) */
+.dropdown:hover > .dropdown-content{ display:block }
+
+/* -------------------------
+   Carousel (images + overlay + arrows)
+   Uses absolute slides + .active (matches your HTML/JS)
+   ------------------------- */
+.carousel{
+  position:relative;
+  width:100%;
+  height:550px;
+  overflow:hidden;
+  background: #111;
+}
+.slides{ position:relative; width:100%; height:100%; }
+.slides::before{
+  /* subtle overlay — lowered so images are clearer */
+  content:"";
+  position:absolute; inset:0;
+  background: var(--overlay);
+  z-index:1;
+  pointer-events:none;
+}
+.slide{
+  position:absolute; inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform: scale(1.02);
+  transition: opacity 0.85s ease, transform 0.85s ease;
+  z-index:0;
+}
+.slide.active{
+  opacity:1;
+  transform: scale(1);
+  z-index:0;
+}
+
+/* carousel text sits above overlay */
+.carousel-text{
+  position:absolute;
+  top:18%;
+  left:50%;
+  transform:translateX(-50%);
+  text-align:center;
+  z-index:3;
+  color:#fff;
+  padding:8px 12px;
+  width:100%;
+  max-width:900px;
+}
+.carousel-text h1{
+  font-size:84px;
+  margin-bottom:10px;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.541);
+  line-height:1.05;
+}
+.btn-enroll{
+  display:inline-block;
+  padding:10px 20px;
+  border-radius:28px;
+  background:var(--primary);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  transition: transform var(--transition), background var(--transition);
+}
+.btn-enroll:hover{ transform:translateY(-4px); background:var(--nav-dark) }
+
+/* arrows */
+.arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color:#fff;
+  border:0;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  z-index:4;
+  transition: background .18s, transform .12s;
+}
+.arrow:hover{ transform:translateY(-50%) scale(1.06); background: rgba(0,0,0,0.6) }
+.arrow.left{ left:18px }
+.arrow.right{ right:18px }
+
+/* -------------------------
+   Wave divider
+   ------------------------- */
+.wave {
+  position: relative;
+  width: 100%;
+  height: 200px; /* adjust height */
+  overflow: hidden;
+}
+
+.wave svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+
+/* -------------------------
+   Title + Properties (background gif + glass)
+   ------------------------- */
+/* container that contains school title + properties (your inline HTML used .title_property) */
+.title_property{
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  padding:0px 0 36px;
+}
+
+/* glass card for the school-title */
+.school-title{
+  max-width:var(--max-content-width);
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  padding:28px;
+  margin-bottom: 18vh;
+  border-radius:18px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.12); /* light glass */
+  box-shadow: 0 12px 30px rgba(4,24,64,0.12);
+}
+
+
+.school-title h1{ font-size:4rem; color:var(--primary); text-align:center; text-shadow: 0 6px 24px rgba(252, 252, 252, 0.712); }
+.school-title p{ font-size:1.05rem; color:#011120 }
+.school-title span{color:#011120 }
+
+/* properties cards row — visible on top of the background gif */
+.properties{
+  display:flex;
+  gap:28px;
+  min-height: 35vh;
+  justify-content:center;
+  align-items:stretch;
+  max-width:var(--max-content-width);
+  margin:18px auto 48px;
+  padding:0 var(--safe-pad);
+  flex-wrap:wrap;
+}
+
+/* property card style (animated) */
+.properties .card{
+  flex:1 1 260px;
+  min-width:240px;
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:12px;
+  text-align:center;
+  transition: transform 0.35s cubic-bezier(.2,.9,.2,1), box-shadow 0.35s;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.properties .card i{ font-size:36px; color:var(--primary) }
+.properties .card h2{ color:var(--text); font-size:1.05rem }
+.properties .card p{ color:var(--muted); font-size:0.95rem }
+
+/* hover effect */
+.properties .card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(4,24,64,0.14);
+}
+
+/* -------------------------
+   About section
+   ------------------------- */
+.about{
+  max-width:var(--max-content-width);
+  margin:40px auto;
+  padding:0 var(--safe-pad);
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+.about-left{ flex:1 1 320px; min-width:260px }
+.about-right{ flex:1 1 320px; min-width:260px; text-align:center }
+.about-left h1{ color:var(--primary); margin-bottom:8px }
+.about-right img{ width:100%; border-radius:10px; box-shadow:var(--shadow) }
+
+/* -------------------------
+   Important (cards) — animate like properties
+   ------------------------- */
+.important{
+  max-width:var(--max-content-width);
+  margin:18px auto 36px;
+  padding:0 var(--safe-pad);
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.important .card{
+    height: 50vh;
+  flex:1 1 260px;
+  min-width:220px;
+  background:var(--card-bg);
+  padding:18px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  transition: transform 0.35s, box-shadow 0.35s;
+  text-align:center;
+}
+.important .card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(4,24,64,0.12);
+}
+.important .card h3{ color:var(--primary); margin-bottom:8px }
+.important .falladd{
+    padding-top: 50px;
+}
+.important  button{
+  margin:20px; padding:10px 18px; border-radius:20px; background:var(--nav); color:#fff; border:0; cursor:pointer;
+}
+.important  button:hover{ background:var(--nav-dark) }
+
+.notice-list,
+.event-list {
+  list-style: none;       /* bullet hatana */
+  padding: 0;
+  margin: 0;
+}
+.notice-list a,
+.event-list a{
+  text-decoration: none;
+}
+.notice-list li:hover ,
+.event-list li:hover {
+  background: #e9ecef;
+  transform: translateX(3px);
+}
+
+/* -------------------------
+   Footer
+   ------------------------- */
+footer{ background:var(--nav); color:#fff; padding:26px var(--safe-pad) 10px }
+.footer-top{ display:flex; gap:18px; justify-content:space-around; flex-wrap:wrap; max-width:var(--max-content-width); margin:0 auto 14px; }
+.footer-top .card{ min-width:220px; flex:1 1 280px }
+.footer-top a{ color:#fff; margin-right:8px ; margin-top: 5px;}
+.footer-bottom{ text-align:center; font-size:13px }
+.footer-top .reach h2{margin-bottom: 18px;}
+.footer-top .reach .fa-facebook{margin-top: 18px;}
+/* -------------------------
+   Small screens (responsive down to 300px)
+   ------------------------- */
+@media (max-width: 992px){
+  .carousel{ height:360px }
+  .carousel-text h1{ font-size:34px }
+  .school-title h1{ font-size:2rem }
+}
+@media (max-width: 768px){
+  .mid-nav{ flex-direction:column; gap:10px; text-align:center; padding:14px var(--safe-pad) }
+  .logo-box img.logo{ height:80px }
+  .logo-box{position: relative; left: auto;}
+  .main-nav{ flex-direction:column; align-items:stretch; gap:6px; padding:8px var(--safe-pad) }
+  .main-nav a{ width:100%; border-radius:10px; padding:10px 12px; }
+  /* mobile dropdown becomes stacked */
+  .dropdown-content{ position:relative; top:0; left:0; min-width:unset; width:100%; box-shadow:none; background:var(--nav); color:#fff; border-radius:8px; display:none; }
+  .dropdown.open > .dropdown-content{ display:block }
+  .dropdown-content a{ color:#fff; padding-left:24px }
+  .carousel{ height:300px }
+  .carousel-text h1{ font-size:26px }
+  .properties{ gap:12px; }
+}
+@media (max-width: 400px){
+  .carousel{ height:240px }
+  .carousel-text h1{ font-size:20px }
+  .school-title h1{ font-size:1.4rem }
+  .properties .card{ min-width:200px }
+}
+@media (max-width: 320px){
+  .top-nav{ padding:8px 10px; font-size:12px; gap:8px }
+  .logo-box img.logo{ height:64px }
+  .carousel{ height:220px }
+  .carousel-text{ top:14% }
+  .carousel-text h1{ font-size:18px; padding:0 8px }
+  .properties, .important{ flex-direction:column; gap:12px; padding:0 8px }
+  .school-title{ padding:18px 10px }
+  .footer-top{ padding:0 8px }
+}
+
+/* small accessibility helpers */
+a:focus, button:focus{ outline:3px solid rgba(21,120,210,0.18); outline-offset:2px; border-radius:6px }
+
+
+/* === Dropdown Toggle (Click Support) === */
+.dropdown > a {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Hidden by default */
+.dropdown-content {
+  display: none;
+}
+
+/* Show when active */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
