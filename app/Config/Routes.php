@@ -14,7 +14,7 @@ $routes->get('/academics', 'Academics::index');
 $routes->get('/notice', 'Notice::index');
 $routes->get('/admission', 'Admission::index');
 $routes->get('/co-curricular', 'Co_curricular::index');
-$routes->get('/students', 'Student::index');
+$routes->get('/student', 'Student::index', ['filter' => 'studentAuth']);
 $routes->get('/contact', 'Contact::index');
 
 $routes->get('/adminLogin','Hello::index');

@@ -6,10 +6,10 @@
   <title>Student Page – Bright Future Public School</title>
 
   <!-- keep your header.css (the exact CSS you provided earlier) -->
-  <link rel="stylesheet" href="css/navModern.css">
+  <link rel="stylesheet" href="<?= base_url('css/navModern.css')?>">
 
   <!-- page styles -->
-  <link rel="stylesheet" href="css/student.css">
+  <link rel="stylesheet" href="<?= base_url('css/student.css')?>">
 </head>
 <body>
 

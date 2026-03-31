@@ -62,7 +62,7 @@ class LoginSignup extends BaseController
 
 
 
-        return redirect()->to('/');
+        return redirect()->to('/student');
     }
 
     return redirect()->back()->with('error', 'Invalid login');

@@ -6,6 +6,7 @@ use App\Models\ToppersModel;
 
 class Student extends BaseController
 {
+    
     public function index(): string
     {
         //student corner
