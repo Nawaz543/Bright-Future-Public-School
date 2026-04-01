@@ -104,7 +104,7 @@
         <button type="submit">Update Password</button>
     </form>
 
-    <a href="/login">Back to Login</a>
+    <a href="/loginSignup">Back to Login</a>
 </div>
 
 </body>
