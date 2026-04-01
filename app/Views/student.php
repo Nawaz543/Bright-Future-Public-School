@@ -17,13 +17,14 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/">
-        <img src="images/logo.webp" alt="Bright Future Public School Logo" class="logo">
+        <img src="<?= base_url('images/logo.webp')?>" alt="Bright Future Public School Logo" class="logo">
         <span class="brand-text">Bright Future Public School</span>
       </a>
 
       <div class="actions">
         <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark mode">🌙</button>
         <a class="btn primary" href="/student#online-classes">Online Class</a>
+        <a class="btn primary" href="<?= base_url('/student/logout') ?>" id="log-btn"> Logout </a>
       </div>
     </div>
 

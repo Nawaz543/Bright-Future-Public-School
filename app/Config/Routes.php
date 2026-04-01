@@ -9,6 +9,7 @@ $routes->get('/', 'Home::index');
 $routes->get('/loginSignup', 'LoginSignup::index');
 $routes->post('/student/login-process','LoginSignup::login');
 $routes->post('/student/signup-process','LoginSignup::store');
+ $routes->get('/student/logout', 'LoginSignup::logout');
 $routes->get('/about', 'About::index');
 $routes->get('/academics', 'Academics::index');
 $routes->get('/notice', 'Notice::index');
@@ -19,9 +20,14 @@ $routes->get('/contact', 'Contact::index');
 
 $routes->get('/adminLogin','Hello::index');
 $routes->post('admin/login-process','Hello::loginProcess');
+//student forget passwrd
+$routes->get('/forgot-password', 'LoginSignup::forgotPassword');
+$routes->post('/send-reset-link', 'LoginSignup::sendResetLink');
 
+$routes->get('/reset-password/(:any)', 'LoginSignup::resetPassword/$1');
+$routes->post('/update-password', 'LoginSignup::updatePassword');
 
-
+//admin auth
 $routes->group('admin', ['filter' => 'adminAuth'], function($routes){
 //Admin
 $routes->get('bfps-admin-p', 'P_dashboard::index');

@@ -15,7 +15,7 @@
     2. contact form ☑️
     3. login setup for admin and sub admin ☑️
     4. secure admin link ☑️
-    5. student longin and signup
+    5. student longin and signup ☑️
     6. forget password for all(student,admin ,sub admin)
     7. addmission request system 
     

@@ -129,6 +129,23 @@
         cursor: pointer;
         user-select: none;
     }
+    .forgot-text {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.forgot-text a {
+  font-size: 13px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.forgot-text a:hover {
+  text-decoration: underline;
+}
+.toggle-text:hover {
+  text-decoration: underline;
+}
   </style>
 </head>
 <body>
@@ -141,12 +158,18 @@
       <!-- LOGIN -->
       <div class="form-box" id="loginBox">
         <h2>Login</h2>
+         <?php if(session()->getFlashdata('error')): ?>
+        <p style="color:red;"><?= session()->getFlashdata('error') ?></p>
+    <?php endif; ?>
         <form  action="<?= site_url('student/login-process') ?>" method="post" enctype="multipart/form-data">
         <input type="text" name='username' placeholder="Student's Admission ID *" required/>
         <input class='password' name='password' type="password" placeholder="Enter Password" required/>
         <div class="show-btn" onclick="togglePass()">👁 Show Password</div>
         <button>Login</button>
         </form>
+        <p class="forgot-text">
+          <a href="<?= site_url('forgot-password') ?>">Forgot Password? Click Here</a>
+        </p>
         <p class="toggle-text" onclick="showSignup()">Don't have an account? Signup</p>
       </div>
 
