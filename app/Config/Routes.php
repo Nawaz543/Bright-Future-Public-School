@@ -20,6 +20,13 @@ $routes->get('/contact', 'Contact::index');
 
 $routes->get('/adminLogin','Hello::index');
 $routes->post('admin/login-process','Hello::loginProcess');
+//admin forgot 
+$routes->get('/admin/forgot-password', 'AdminAuth::forgotPassword');
+$routes->post('/admin/send-reset-link', 'AdminAuth::sendResetLink');
+
+$routes->get('/admin/reset-password/(:any)', 'AdminAuth::resetPassword/$1');
+$routes->post('/admin/update-password', 'AdminAuth::updatePassword');
+
 //student forget passwrd
 $routes->get('/forgot-password', 'LoginSignup::forgotPassword');
 $routes->post('/send-reset-link', 'LoginSignup::sendResetLink');

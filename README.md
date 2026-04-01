@@ -16,7 +16,7 @@
     3. login setup for admin and sub admin ☑️
     4. secure admin link ☑️
     5. student longin and signup ☑️
-    6. forget password for all(student,admin ,sub admin)
+    6. forget password for all(student☑️,admin ,sub admin)
     7. addmission request system 
     
 -->
@@ -78,5 +78,5 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
 <!-- 
 
-admin1 id -Md_shafik548 password -  MdShaf_bfps@786
-admin2 id -Teachers2614 password - TeachersAdpage@123 -->
+admin1 id -Md_shafik548 password -  Shaf$786bfps
+admin2 id -Teachers2614 password - Teac@786bfps -->

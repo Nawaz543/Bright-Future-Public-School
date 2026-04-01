@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Login</title>
+<title>Admin Forgot Password</title>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
@@ -17,7 +17,7 @@
 
     body {
         min-height: 100vh;
-        background: #0f172a; /* dark navy */
+        background: #0f172a;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,7 +27,7 @@
     .container {
         width: 100%;
         max-width: 400px;
-        background: #1e293b; /* slightly lighter dark */
+        background: #1e293b;
         padding: 35px;
         border-radius: 18px;
         box-shadow: 0 0 30px rgba(0, 162, 255, 0.2);
@@ -42,23 +42,29 @@
     h2 {
         color: #e2e8f0;
         text-align: center;
-        margin-bottom: 25px;
-        font-size: 26px;
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #94a3b8;
+        font-size: 13px;
+        margin-bottom: 20px;
     }
 
     .input-group {
         margin-bottom: 20px;
-        width: 100%;
     }
 
     .input-group input {
         width: 100%;
         padding: 14px 15px;
         border-radius: 10px;
-        border: 1px solid #334155; 
-        background: #0f172a; 
+        border: 1px solid #334155;
+        background: #0f172a;
         color: #e2e8f0;
-        font-size: 15px;
+        font-size: 14px;
         outline: none;
         transition: 0.25s;
     }
@@ -69,17 +75,7 @@
     }
 
     ::placeholder {
-        color: #94a3b8; /* clear visible placeholder */
-    }
-
-    .show-btn {
-        text-align: right;
-        margin-top: -15px;
-        margin-bottom: 10px;
-        color: #38bdf8;
-        font-size: 13px;
-        cursor: pointer;
-        user-select: none;
+        color: #94a3b8;
     }
 
     .button {
@@ -88,7 +84,7 @@
         background: linear-gradient(135deg, #0891b2, #0ea5e9);
         border: none;
         color: white;
-        font-size: 17px;
+        font-size: 16px;
         font-weight: 600;
         border-radius: 10px;
         cursor: pointer;
@@ -100,26 +96,42 @@
         transform: scale(1.02);
     }
 
-    /* Flash error message */
-    .error {
-        background: rgba(255, 80, 80, 0.2);
+    .msg {
         padding: 10px;
         text-align: center;
         margin-bottom: 15px;
         border-radius: 8px;
-        color: #ff7b7b;
         font-size: 14px;
     }
 
-    /* Mobile responsiveness */
+    .error {
+        background: rgba(255, 80, 80, 0.2);
+        color: #ff7b7b;
+    }
+
+    .success {
+        background: rgba(80, 255, 150, 0.15);
+        color: #4ade80;
+    }
+
+    .back {
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .back a {
+        color: #38bdf8;
+        font-size: 13px;
+        text-decoration: none;
+    }
+
+    .back a:hover {
+        text-decoration: underline;
+    }
+
     @media (max-width: 450px){
         .container {
             padding: 25px;
-            border-radius: 15px;
-        }
-
-        h2 {
-            font-size: 22px;
         }
     }
 </style>
@@ -129,41 +141,33 @@
 
 <div class="container">
 
-    <h2>Admin Login</h2>
+    <h2>Forgot Password</h2>
+    <p class="subtitle">Enter your email to receive reset link</p>
 
+    <!-- Flash Messages -->
     <?php if(session()->getFlashdata('error')): ?>
-        <div class="error"><?= session()->getFlashdata('error'); ?></div>
+        <div class="msg error"><?= session()->getFlashdata('error') ?></div>
     <?php endif; ?>
 
-    <form action="<?= base_url('admin/login-process'); ?>" method="post">
+    <?php if(session()->getFlashdata('success')): ?>
+        <div class="msg success"><?= session()->getFlashdata('success') ?></div>
+    <?php endif; ?>
+
+    <form method="post" action="<?= base_url('admin/send-reset-link') ?>">
 
         <div class="input-group">
-            <input type="text" name="username" placeholder="Enter Username" required>
+            <input type="email" name="email" placeholder="Enter Admin Email" required>
         </div>
 
-        <div class="input-group">
-            <input type="password" name="password" id="password" placeholder="Enter Password" required>
-        </div>
-
-        <div class="show-btn" onclick="togglePass()">👁 Show Password</div>
-
-        <button class="button">Login</button>
+        <button class="button">Send Reset Link</button>
 
     </form>
-    <p style="text-align:right; margin-top:10px;">
-  <a href="<?= base_url('admin/forgot-password') ?>" style="color:#38bdf8; font-size:13px;">
-    Forgot Password?
-  </a>
-</p>
+
+    <div class="back">
+        <a href="<?= base_url('adminLogin') ?>">← Back to Login</a>
+    </div>
 
 </div>
-
-<script>
-function togglePass(){
-    let x = document.getElementById("password");
-    x.type = x.type === "password" ? "text" : "password";
-}
-</script>
 
 </body>
 </html>
